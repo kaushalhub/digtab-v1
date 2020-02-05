@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets1/images/logo.png"
+    />
+    <link rel="stylesheet" href="assets1/css/main.css" />
+    <title>DigTab</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/register/insert" method="post" id="form" class="form">
+        <h2>Register With Us</h2>
+        <div class="form-control">
+          <label for="username">Name</label>
+          <input
+            type="text"
+            id="username"
+            name="name"
+            placeholder="Enter Name"
+            required
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="Mobile Number">Mobile Number</label>
+          <input
+            type="text"
+            id="number"
+            name="number"
+            placeholder="Enter Mobile Number"
+            required
+          />
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="Gender">Gender</label>
+          <select name="gender" class="form-control">
+            <option id="gender">-Select Gender-</option>
+            <option id="gender" value="male">Male</option>
+            <option id="gender" value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter password"
+            required
+          />
+          <small>Error message</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            name="cnfpassword"
+            placeholder="Enter password again"
+            required
+          />
+          <small>Error message</small>
+        </div>
+
+        <input type="submit" id="submit" value="Signup" />
+      </form>
+    </div>
+  </body>
+</html>

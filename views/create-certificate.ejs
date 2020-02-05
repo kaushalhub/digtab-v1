@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets1/images/logo.png"
+    />
+    <link rel="stylesheet" href="assets1/css/main.css" />
+    <title>DigTab</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/create-certificate/insert" method="post" id="form" class="form">
+        <h2>Create Certificate</h2>
+        <div class="form-control">
+          <label for="username">Select College</label>
+          <select name="collegename" id="collegename" class="form-control col-sm-5"></select><br>
+                      
+        </div>
+
+        <div class="form-control">
+          <label for="password">Select Workshop</label>
+          <select name="workshopname" id="workshopname" class="form-control col-sm-5"></select><br>
+          <small>Error message</small>
+        </div>
+
+        <input type="submit" id="submit" value="Get Certificate" />
+      </form>
+    </div>
+  </body>
+
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <Script>
+    $.getJSON("/add-college/workshopdetail", data => {
+        project = data;
+        console.log(data);
+        fillDropDown("collegename", data, "Choose College", 0);
+    });
+
+    $.getJSON("/add-workshop/oneworkshop", data => {
+        project = data;
+        console.log(data);
+        a("workshopname", data, "Choose Workshop", 0);
+    });
+
+    function fillDropDown(id, data, label, selectedid = 0) {
+        $(`#${id}`).empty();
+        $(`#${id}`).append(
+            $("<option>")
+                .val("null")
+                .text(label)
+        );
+        $.each(data, (i, item) => {
+            if (item.id == selectedid) {
+                $(`#${id}`).append(
+                    $("<option selected>")
+                        .val(item.collegename)
+                        .text(item.collegename)
+                );
+            } else {
+                $(`#${id}`).append(
+                    $("<option>")
+                        .val(item.collegename)
+                        .text(item.collegename)
+                );
+            }
+        });
+    };
+
+     function a(id, data, label, selectedid = 0) {
+        $(`#${id}`).empty();
+        $(`#${id}`).append(
+            $("<option>")
+                .val("null")
+                .text(label)
+        );
+        $.each(data, (i, item) => {
+            if (item.id == selectedid) {
+                $(`#${id}`).append(
+                    $("<option selected>")
+                        .val(item.workshopname)
+                        .text(item.workshopname)
+                );
+            } else {
+                $(`#${id}`).append(
+                    $("<option>")
+                        .val(item.workshopname)
+                        .text(item.workshopname)
+                );
+            }
+        });
+    };
+
+</Script>
+</html>
