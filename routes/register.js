@@ -13,7 +13,7 @@ router.post("/insert", (req, res) => {
   let body = req.body;
   pool.query(`insert into register set ?`, body, (err, result) => {
     if (err) throw err;
-    else res.redirect("/");
+    else res.redirect("/login");
   });
 });
 
