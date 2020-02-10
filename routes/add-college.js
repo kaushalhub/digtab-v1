@@ -14,7 +14,7 @@ router.post("/insert",  (req, res) => {
    
     pool.query(`insert into addcollege set ?`, body, (err, result) => {
         if (err) throw err;
-        else res.redirect("/edittravelogue");
+        else res.redirect("/add-college");
     });
 });
 

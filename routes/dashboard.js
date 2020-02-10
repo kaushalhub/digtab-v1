@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
         else res.render(`dashboard`, { login: true, result: result });
       });
     } else {
-      res.render("dashboard", { login: false });
+      res.render("login", { login: false });
     }
   });
   

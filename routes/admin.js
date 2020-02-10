@@ -17,4 +17,14 @@ router.post("/insert", (req, res) => {
   });
 });
 
+
+
+router.get("/alldata", (req, res) => {
+  var query = `select d.*,(select h.name from register h where h.id = d.studentid) as name from certificate d;`
+  pool.query(query, (err, result) => {
+    if (err) throw err;
+    else res.json(result);
+  }); 
+});
+
 module.exports = router; 
