@@ -28,7 +28,7 @@ router.get("/workshop", (req, res) => {
 
 
 router.get("/oneworkshop", (req, res) => {
-  var query = `Select * from addworkshop where id = (select max(id) from addworkshop);`
+  var query = `select * from addworkshop where id = (select max(id) from addworkshop);`
   pool.query(query, (err, result) => {
     if (err) throw err;
     else res.json(result);
