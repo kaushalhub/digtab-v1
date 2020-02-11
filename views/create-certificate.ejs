@@ -18,14 +18,14 @@
         <h2>Create Certificate</h2>
         <div class="form-control">
           <label for="username">Select College</label>
-          <select name="collegename" id="collegename" class="form-control col-sm-5"></select><br>
+          <select required area-required="true" name="collegename" id="collegename" class="form-control col-sm-5" required></select>
                       
         </div>
 
         <div class="form-control">
           <label for="password">Select Workshop</label>
-          <select name="workshopname" id="workshopname" class="form-control col-sm-5"></select><br>
-          <small>Error message</small>
+          <select name="workshopname" id="workshopname" class="form-control col-sm-5" required></select>
+          
         </div>
 
         <input type="submit" id="submit" value="Get Certificate" />
@@ -81,7 +81,7 @@
         $.each(data, (i, item) => {
             if (item.id == selectedid) {
                 $(`#${id}`).append(
-                    $("<option selected>")
+                    $("<option selected >")
                         .val(item.workshopname)
                         .text(item.workshopname)
                 );

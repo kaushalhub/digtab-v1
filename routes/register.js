@@ -17,7 +17,6 @@ router.post("/insert", (req, res) => {
   });
 });
 
-
 router.post("/all", (req, res) => {
   const { email, password } = req.body;
   var query = `select * from register where email = "${req.body.email}" and password = "${req.body.password}"`;
